@@ -1,0 +1,21 @@
+﻿@model ATM.Models.Transaction
+@{
+    ViewBag.Title = "Index";
+}
+    <div id="ImgContainer">
+        <img src="~/Views/CheckingAccount/atm.jpg"/>
+    </div>
+    <div id="container">
+        <div>
+            <a href="https://localhost:44332/Transaction/Withdraw" style="display:block;margin-bottom:2vh"><button class="btn btn-primary">Withdraw</button></a>
+            <a href="https://localhost:44332/Transaction/Deposit" style="display:block;margin-bottom:2vh"><button class="btn btn-primary">Deposit</button></a>
+            <a href="https://localhost:44332/Transaction/QuickCash" style="display:block;margin-bottom:2vh"><button class="btn btn-primary">Quick cash</button></a>
+        </div>
+        <div>
+            <a href="https://localhost:44332/Transaction/Inquiry" style="display:block;margin-bottom:2vh"><button class="btn btn-primary">Inquiry</button></a>
+            <a style="display:block;margin-bottom:2vh"><button class="btn btn-danger">Print statement</button></a>
+            <a style="display:block;margin-bottom:2vh"><button class="btn btn-danger">Transfer amount </button></a>
+
+        </div>
+    </div>
+    <h4>@TempData["Message"]</h4>
