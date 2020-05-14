@@ -11,5 +11,8 @@ namespace ATM.Models
         public float Amount { get; set; }
         public CheckingAccount CheckingAccount { get; set; }
         public int CheckingAccountId { get; set; }
+
+        public DateTime TransactionDate { get; set; }
+        public String TransactionSource { get; set; }
     }
 }

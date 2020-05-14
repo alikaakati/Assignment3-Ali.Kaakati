@@ -197,6 +197,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\CheckingAccountsViewModel.cs" />
+    <Compile Include="ViewModel\TransferViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-ATM-20200429022335.mdf" />
@@ -266,10 +267,9 @@
     <Content Include="Views\Transaction\ConfirmDeposit.cshtml" />
     <Content Include="Views\Transaction\Withdraw.cshtml" />
     <Content Include="Views\Transaction\ConfirmWithdraw.cshtml" />
+    <Content Include="Views\Transaction\TransferMoney.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Test\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

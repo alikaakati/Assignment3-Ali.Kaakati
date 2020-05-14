@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using ATM.ViewModel;
 using System.Web.UI;
 using System.Data;
+using System.Web.Services.Description;
 
 namespace ATM.Controllers
 {
@@ -101,6 +102,23 @@ namespace ATM.Controllers
                 return RedirectToAction("Index", "CheckingAccount");
             }
 
+        }
+        [Route ("Transaction/TransferMoney")]
+        public ActionResult TransferMoney()
+        {
+            return View();
+        }
+        public ActionResult ConfrimTransferMoney(Transaction ts)
+        {
+            var Amount = ts.Amount;
+            if (Amount <= 0)
+            {
+                return Content(" Can't Transfer Money with a blank account)");
+            }
+            var acc = _context.CheckingAccounts.Single(c => c.Id == 1);
+            acc.Balance = acc.Balance + Amount;
+            _context.SaveChanges();
+            return PartialView("hahhaha", ts);
         }
     }
 }
