@@ -11,6 +11,7 @@ namespace ATM.Models
         public int Id { get; set; }
         [Required()]
         [StringLength(10, ErrorMessage = "Account number must be 10 numbers")]
+        [Display(Name ="Account #")]
         public string AccountNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
