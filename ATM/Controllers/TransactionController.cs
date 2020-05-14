@@ -108,17 +108,24 @@ namespace ATM.Controllers
         {
             return View();
         }
-        public ActionResult ConfrimTransferMoney(Transaction ts)
+        public ActionResult ConfrimTransferMoney(Transaction ts,int To)
         {
             var Amount = ts.Amount;
             if (Amount <= 0)
             {
                 return Content(" Can't Transfer Money with a blank account)");
             }
-            var acc = _context.CheckingAccounts.Single(c => c.Id == 1);
-            acc.Balance = acc.Balance + Amount;
-            _context.SaveChanges();
-            return PartialView("hahhaha", ts);
+            var acc = _context.CheckingAccounts.Single(c => c.Id == To);
+            if (acc)
+            {
+                acc.Balance = acc.Balance + Amount;
+                _context.SaveChanges();
+                return PartialView("Done", ts);
+            }
+            else
+            {
+                return Content("Account doesnt exists");
+            }
         }
     }
 }
